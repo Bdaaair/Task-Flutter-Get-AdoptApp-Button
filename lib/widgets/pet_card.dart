@@ -15,7 +15,8 @@ class PetCard extends StatelessWidget {
         children: [
           Expanded(
             child: Image.network(
-              pet.image,
+              pet.image ??
+                  "https://i0.wp.com/www.themillennialsahm.com/wp-content/uploads/2020/10/HuskyPuppy1.jpg?resize=879%2C1024&ssl=1",
               fit: BoxFit.cover,
               width: double.infinity,
             ),
@@ -26,9 +27,9 @@ class PetCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(pet.name),
-                  Text("Age: ${pet.age}"),
-                  Text("Gender: ${pet.gender}"),
+                  Text(pet.name!),
+                  Text("Age: ${pet.age!}"),
+                  Text("Gender: ${pet.gender!}"),
                   ElevatedButton(
                     onPressed: () {},
                     child: const Text("Adopt"),
